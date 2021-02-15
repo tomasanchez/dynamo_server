@@ -12,13 +12,15 @@ router.route("/").get((req, res) => {
 });
 
 router.route("/add").post((req, res) => {
-  const usnam = req.body.usnam;
+  const usnam = req.body.usnam,
+    name = req.body.name.toUpperCase(),
+    lastName = req.body.lastName.toUpperCase();
 
-  const customer = new Customer({ usnam });
+  const customer = new Customer({ usnam, name, lastName });
 
   customer
     .save()
-    .then(() => res.json(`Add user ${customer}`))
+    .then((es_entity) => res.status(201).json(es_entity))
     .catch((err) => res.status(400).json(`Error: ${err}`));
 });
 
