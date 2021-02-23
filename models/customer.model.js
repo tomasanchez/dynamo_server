@@ -53,7 +53,11 @@ const customerSchema = new Schema(
       trim: true,
       minlength: 2,
     },
-    address: Object,
+    address: {
+      street: { type: String, required: true },
+      zip: String,
+      city: { type: String, required: true },
+    },
     phone: {
       type: String,
       required: true,
