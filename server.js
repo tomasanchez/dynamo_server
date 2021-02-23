@@ -1,3 +1,13 @@
+/**
+ * Server.
+ *
+ * Handles server connection.
+ *
+ * @file server.js
+ * @author Tomás A. Sánchez
+ * @since 02.22.2021
+ */
+
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
